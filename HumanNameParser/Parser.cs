@@ -8,7 +8,7 @@ namespace HumanNameParser
     public class Parser
     {
 
-        private static readonly string[] _suffixes = { "esq", "esquire", "jr", "sr", "2", "ii", "iii", "iv" };
+        private static readonly string[] _suffixes = { "esq", "esquire", "jr", "sr", "2", "ii", "iii", "iv" , "v", "phd"};
         private static readonly string[] _prefixes = {"bar","ben","bin","da","dal","de la", "de", "del","der","di", "ibn","la","le","san","st","ste","van", "van der", "van den", "vel","von"   };
 
         const RegexOptions _options = RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.Multiline;
@@ -49,9 +49,9 @@ namespace HumanNameParser
                 pname.Suffix = chopWithRegex(_suffixRegex, 1);
                  _name = flip(_name, ',');
 
-                pname.Last = chopWithRegex(_lastRegex, 0);
-
                 pname.LeadingInitial = chopWithRegex(_leadingInitRegex, 1);
+
+                pname.Last = chopWithRegex(_lastRegex, 0);
 
                 pname.First = chopWithRegex(_firstRegex, 0);
 
