@@ -32,8 +32,23 @@ namespace HumanNameParser.Tests
             Assert.AreEqual("O'Dell", pname.Last);
             Assert.AreEqual("James", pname.First);
             Assert.AreEqual("C.", pname.Middle);
-
         }
+
+        [TestMethod]
+        public void OneName()
+        {
+            var parser = new Parser();
+            var pname = parser.Parse("Cher");
+
+            Assert.AreEqual("", pname.Nicknames);
+            Assert.AreEqual("", pname.LeadingInitial);
+            Assert.AreEqual("", pname.Suffix);
+            Assert.AreEqual("Cher", pname.Last);
+            Assert.AreEqual("", pname.First);
+            Assert.AreEqual("", pname.Middle);
+        }
+
+
 
         [TestMethod]
         public void LeadingInitial()

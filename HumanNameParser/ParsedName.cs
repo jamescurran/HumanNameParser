@@ -21,6 +21,7 @@ namespace HumanNameParser
             Middle = "";
             Last = "";
             Suffix = "";
+            LeadingInitial = "";
 
             FullName = name;
         }

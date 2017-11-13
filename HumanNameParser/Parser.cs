@@ -43,11 +43,14 @@ namespace HumanNameParser
             _name = name;
             var pname = new ParsedName(name);
 
-            if (name.IndexOf(' ') > -1)
+            if (name.IndexOf(' ') == -1)
+                // Consider a single name as a last name (because that the name used to index it)
+                pname.Last = name;
+            else
             {
-                pname.Nicknames = chopWithRegex( _nicknamesRegex, 2);
+                pname.Nicknames = chopWithRegex(_nicknamesRegex, 2);
                 pname.Suffix = chopWithRegex(_suffixRegex, 1);
-                 _name = flip(_name, ',');
+                _name = flip(_name, ',');
 
                 pname.LeadingInitial = chopWithRegex(_leadingInitRegex, 1);
 
@@ -56,13 +59,12 @@ namespace HumanNameParser
                 pname.First = chopWithRegex(_firstRegex, 0);
 
                 pname.Middle = _name.Trim();
-
             }
 
             return pname;
         }
 
-        public string  chopWithRegex(Regex regex, int submatchIndex = 0)
+        private string  chopWithRegex(Regex regex, int submatchIndex = 0)
         {
             var match = regex.Match(_name);
             if (!match.Success)
