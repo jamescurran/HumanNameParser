@@ -44,7 +44,7 @@ namespace HumanNameParser
             var pname = new ParsedName(name);
 
             if (name.IndexOf(' ') == -1)
-                // Consider a single name as a last name (because that the name used to index it)
+                // Consider a single name as a last name (because that's the name used to index it)
                 pname.Last = name;
             else
             {
@@ -98,6 +98,7 @@ namespace HumanNameParser
             {
                 throw new ArgumentException("Can't flip around multiple '$flipAroundChar' characters in namestring.");
             }
+
             return newname;
         }
 
