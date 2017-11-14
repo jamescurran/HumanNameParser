@@ -10,6 +10,7 @@ License:		<http://www.opensource.org/licenses/mit-license.php>
 
 # Description
 Port of the original PHP HumanNameParse into C#/.NET (.NET Standard v1.3)
+(Original: https://github.com/jasonpriem/HumanNameParser.php )
 
 Takes human names of arbitrary complexity and various wacky formats like:
 
