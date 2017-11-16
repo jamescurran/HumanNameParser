@@ -80,6 +80,23 @@ namespace HumanNameParser.Tests
 
         }
 
+        [TestMethod]
+        public void Title()
+        {
+            var parser = new Parser();
+            var pname = parser.Parse("Mr. William R. De La Cruz III");
+
+            Assert.AreEqual("Mr.", pname.Title);
+            Assert.AreEqual("", pname.LeadingInitial);
+            Assert.AreEqual("William", pname.First);
+            Assert.AreEqual("R.", pname.Middle);
+            Assert.AreEqual("De La Cruz", pname.Last);
+            Assert.AreEqual("", pname.Nicknames);
+            Assert.AreEqual("III", pname.Suffix);
+
+        }
+
+
         // Test Normalize
 
         [TestMethod]
@@ -100,6 +117,8 @@ namespace HumanNameParser.Tests
             Assert.AreEqual("John Smith", parser.flip("Smith,    John    ", ','));
         }
 
+        
+
         [TestMethod]
         public void TestFullList()
         {
@@ -108,15 +127,19 @@ namespace HumanNameParser.Tests
             var parser = new Parser();
             foreach(var name  in names)
             {
+                if (name[0] == '*')
+                    continue;
+
                 var parts = name.Split('|');
                 var pname = parser.Parse(parts[0]);
 
-                Assert.AreEqual(parts[1] ?? "", pname.LeadingInitial, name);
-                Assert.AreEqual(parts[2] ?? "", pname.First, name);
-                Assert.AreEqual(parts[3] ?? "", pname.Nicknames, name);
-                Assert.AreEqual(parts[4] ?? "", pname.Middle, name);
-                Assert.AreEqual(parts[5] ?? "", pname.Last, name);
-                Assert.AreEqual(parts[6] ?? "", pname.Suffix, name);
+                Assert.AreEqual(parts[1] ?? "", pname.Title, name);
+                Assert.AreEqual(parts[2] ?? "", pname.LeadingInitial, name);
+                Assert.AreEqual(parts[3] ?? "", pname.First, name);
+                Assert.AreEqual(parts[4] ?? "", pname.Nicknames, name);
+                Assert.AreEqual(parts[5] ?? "", pname.Middle, name);
+                Assert.AreEqual(parts[6] ?? "", pname.Last, name);
+                Assert.AreEqual(parts[7] ?? "", pname.Suffix, name);
 
 
             }

@@ -6,6 +6,7 @@ namespace HumanNameParser
     {
         public string FullName { get; set; }
 
+        public string Title { get; set; }
         public string LeadingInitial { get; set; }
         public string First { get; set; }
         public string Nicknames { get; set; }
@@ -15,6 +16,7 @@ namespace HumanNameParser
 
         public ParsedName(string name)
         {
+            Title = "";
             First = "";
             Nicknames = "";
             Middle = "";
