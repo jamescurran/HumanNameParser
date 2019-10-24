@@ -60,6 +60,12 @@ namespace HumanNameParser
                 pname.Title = chopWithRegex(_titleRegex, 1);
                 pname.LeadingInitial = chopWithRegex(_leadingInitRegex, 1);
 
+                if (_name.IndexOf(' ') == -1)
+                {
+	                pname.Last = _name;
+	                return pname;
+                }
+
                 pname.Last = chopWithRegex(_lastRegex, 0);
 
                 pname.First = chopWithRegex(_firstRegex, 0);
@@ -76,10 +82,12 @@ namespace HumanNameParser
             if (!match.Success)
                 return String.Empty;
 
-            var text = match.Groups[submatchIndex].Value;
-            _name = normalize(_name.Replace(match.Value, ""));
+            var grp = match.Groups[0];
 
-            return text;
+			var text = match.Groups[submatchIndex].Value;
+            _name = normalize(_name.Remove(grp.Index, grp.Length));
+
+			return text;
         }
 
         /*

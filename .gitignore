@@ -4,3 +4,4 @@
 /HumanNameParser.Tests/bin
 /HumanNameParser.Tests/obj
 /packages
+*.user
