@@ -7,6 +7,8 @@ Author:		James M. Curran <james.curran@gmail.com>
 
 License:		<http://www.opensource.org/licenses/mit-license.php>
 
+Blog entry:  https://honestillusion.com/2017/11/12/human-name-parser
+
 
 # Description
 Port of the original PHP HumanNameParse into C#/.NET (.NET Standard v1.3)
