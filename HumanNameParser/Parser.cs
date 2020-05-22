@@ -45,11 +45,12 @@ namespace HumanNameParser
 
         public ParsedName Parse(string name)
         {
-            _name = name;
-            var pname = new ParsedName(name);
+	        _name = name;
+	        var pname = new ParsedName(name);
 
-            if (name.IndexOf(' ') == -1)
-                // Consider a single name as a last name (because that's the name used to index it)
+	        if (name.IndexOfAny(new char[] {' ', ',' }) == -1)
+
+        // Consider a single name as a last name (because that's the name used to index it)
                 pname.Last = name;
             else
             {
