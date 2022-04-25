@@ -9,9 +9,11 @@
     <PackageIcon>NovelTheoryLogo150.png</PackageIcon>
     <RepositoryUrl>https://github.com/jamescurran/HumanNameParser</RepositoryUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageTags> parser;parsing;name</PackageTags>
+    <PackageTags> parser;parsing;name;string;split</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageId>NovelTheory.$(AssemblyName)</PackageId>
+    <AssemblyVersion>1.0.0.1</AssemblyVersion>
+    <FileVersion>1.0.0.1</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
