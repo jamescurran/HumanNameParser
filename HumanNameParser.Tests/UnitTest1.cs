@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.IO;
 
 namespace NovelTheory.HumanNameParser.Tests
@@ -133,9 +134,10 @@ namespace NovelTheory.HumanNameParser.Tests
         {
             // <nameString>|<firstInitial>|<firstName>|<nicknames>|<middleNames>|<lastNames>|<suffix>
             var names = File.ReadAllLines("testNames.txt");
+
             foreach(var name  in names)
             {
-                if (name[0] == '*')
+                if (String.IsNullOrWhiteSpace(name) || name[0] == '*')
                     continue;
 
                 var parts = name.Split('|');
@@ -149,6 +151,23 @@ namespace NovelTheory.HumanNameParser.Tests
                 Assert.AreEqual(parts[6], pName.Last, name);
                 Assert.AreEqual(parts[7], pName.Suffix, name);
             }
+        }
+        /// <summary>
+        /// Does not properly parse a name formatted as "last,first" with no spaces around the comma.
+        /// This results in the full name being classified as just the last name. Interestingly,
+        /// if you add a middle name onto this, it does correctly parse all of the names: "last,first middle".
+        /// </summary>
+        [TestMethod]
+        public void Issue_1()
+        {
+	        var pName = _parser.Parse("Smith,John");
+
+	        Assert.AreEqual("", pName.LeadingInitial);
+	        Assert.AreEqual("John", pName.First);
+	        Assert.AreEqual("", pName.Middle);
+	        Assert.AreEqual("Smith", pName.Last);        // was parsing as "nderson" as first name
+	        Assert.AreEqual("", pName.Nicknames);
+	        Assert.AreEqual("", pName.Suffix);
         }
     }
 }

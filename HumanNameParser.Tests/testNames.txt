@@ -35,3 +35,8 @@ O'Malley y Muñoz, C. Björn Roger III||C.|Björn||Roger|O'Malley y Muñoz|III
 James Hugh Calum Laurie|||James||Hugh Calum|Laurie|
 *O'Malley Jr., Björn|||Björn|||O'Malley|Jr
 Mr. William R. Hearst, III|Mr.||William||R.|Hearst|III
+BENTLEY, E RANDOLPH||E|RANDOLPH|||BENTLEY|
+WARD, C LAVON||C|LAVON|||WARD|
+BOWER, N RUSSELL||N|RUSSELL|||BOWER|
+
+*input string | Title | LeadingInitial | First | Nicknames | Middle | Last | Suffix
