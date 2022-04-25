@@ -26,3 +26,9 @@ and parses out the:
 * middle names
 * last name (including compound ones like "van der Sar' and "Ortega y Gasset"), and
 * suffix (like 'Jr.', 'III')
+
+
+UPDATE: 
+25-Apr-2022
+     Created NuGet package.  Since there was already a packet called "HumanNameParser", this is "NovelTheory.HumanNameParser", with the namespace changed to match.
+	

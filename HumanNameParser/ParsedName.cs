@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace HumanNameParser
+namespace NovelTheory.HumanNameParser
 {
     public class ParsedName
     {

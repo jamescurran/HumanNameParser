@@ -1,7 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.IO;
 
-namespace HumanNameParser.Tests
+namespace NovelTheory.HumanNameParser.Tests
 {
     [TestClass]
     public class UnitTest1
