@@ -165,7 +165,7 @@ namespace NovelTheory.HumanNameParser.Tests
 	        Assert.AreEqual("", pName.LeadingInitial);
 	        Assert.AreEqual("John", pName.First);
 	        Assert.AreEqual("", pName.Middle);
-	        Assert.AreEqual("Smith", pName.Last);        // was parsing as "nderson" as first name
+	        Assert.AreEqual("Smith", pName.Last); 
 	        Assert.AreEqual("", pName.Nicknames);
 	        Assert.AreEqual("", pName.Suffix);
         }

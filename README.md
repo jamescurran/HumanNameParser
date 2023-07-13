@@ -31,6 +31,9 @@ and parses out the:
 
 
 UPDATE: 
-25-Apr-2022
-     Created NuGet package.  Since there was already a packet called "HumanNameParser", this is "NovelTheory.HumanNameParser", with the namespace changed to match.
+ - 13-Jul-2023
+   - Switched target famework from netstandard1.6 to netstandard2.0
+
+ - 25-Apr-2022
+   - Created NuGet package.  Since there was already a packet called "HumanNameParser", this is "NovelTheory.HumanNameParser", with the namespace changed to match.
 	
